@@ -1,33 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent">
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:id="@+id/ParentLayout">
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:layout_width="wrap_content"
+            android:text="Change clock design"
+            android:layout_marginTop="10dp"/>
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:gravity="center"
-            android:orientation="vertical"
-            android:id="@+id/ParentLayout">
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
 
-            <TextView
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceMedium"
+            <EditText
+                android:id="@+id/mode"
                 android:layout_width="wrap_content"
-                android:text="Change clock design"
-                android:layout_marginTop="10dp"/>
-            <LinearLayout
-                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <EditText
-                    android:id="@+id/mode"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="6"
-                    android:hint="Color mode..." />
+                android:layout_weight="6"
+                android:hint="Color mode..." />
 
             <Button
                 android:layout_height="wrap_content"
@@ -35,80 +35,160 @@
                 android:text="Set Mode"
                 android:onClick="setMode"
                 android:layout_weight="1"/>
-            </LinearLayout>
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Solid Color"
-                android:layout_marginTop="15dp"/>
-
-            <Button
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="reset"
-                android:layout_margin="10dp"
-                android:onClick="reset"/>
-            <Button
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:text="solid color"
-                android:layout_margin="10dp"
-                android:onClick="setSolidColors"/>
-
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Gradient Start Color"
-                android:layout_marginTop="15dp"/>
-
-            <SeekBar
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/startRed"
-                android:max="255"
-                android:layout_marginBottom="10dp"/>
-
-            <SeekBar
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/startGreen"
-                android:max="255"
-                android:layout_marginBottom="10dp"/>
-
-            <SeekBar
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/startBlue"
-                android:max="255"
-                android:layout_marginBottom="10dp"/>
-            <TextView
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                android:text="Gradient End Color"
-                android:layout_marginTop="15dp"/>
-
-            <SeekBar
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/endRed"
-                android:max="255"
-                android:layout_marginBottom="10dp"/>
-
-            <SeekBar
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/endGreen"
-                android:max="255"
-                android:layout_marginBottom="10dp"/>
-
-            <SeekBar
-                android:layout_height="wrap_content"
-                android:layout_width="match_parent"
-                android:id="@+id/endBlue"
-                android:max="255"
-                android:layout_marginBottom="10dp"/>
-
         </LinearLayout>
 
-    </ScrollView>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Solid Color"
+            android:layout_marginTop="15dp"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="reset"
+            android:layout_margin="10dp"
+            android:onClick="reset"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="solid"
+            android:layout_margin="10dp"
+            android:onClick="solid"/>
+
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="gradient"
+            android:layout_margin="10dp"
+            android:onClick="gradient"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/red"
+            android:max="255"
+            android:layout_marginBottom="10dp"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/green"
+            android:max="255"
+            android:layout_marginBottom="10dp"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/blue"
+            android:max="255"
+            android:layout_marginBottom="10dp"/>
+
+        <View
+            android:background="?android:attr/dividerVertical"
+            android:layout_height="1dp"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Gradient Start Color"
+            android:layout_marginTop="15dp"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/startRed"
+            android:max="255"
+            android:layout_marginBottom="10dp"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/startGreen"
+            android:max="255"
+            android:layout_marginBottom="10dp"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/startBlue"
+            android:max="255"
+            android:layout_marginBottom="10dp"/>
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Gradient End Color"
+            android:layout_marginTop="15dp"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/endRed"
+            android:max="255"
+            android:layout_marginBottom="10dp"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/endGreen"
+            android:max="255"
+            android:layout_marginBottom="10dp"/>
+
+        <SeekBar
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:id="@+id/endBlue"
+            android:max="255"
+            android:layout_marginBottom="10dp"/>
+        <View
+            android:background="?android:attr/dividerVertical"
+            android:layout_height="1dp"
+            android:layout_width="match_parent"/>
+
+        <TextView
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="2 color fade"
+            android:layout_marginTop="15dp"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="red to green"
+            android:layout_margin="10dp"
+            android:onClick="r2g"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="red to blue"
+            android:layout_margin="10dp"
+            android:onClick="r2b"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="green to red"
+            android:layout_margin="10dp"
+            android:onClick="g2r"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="green to blue"
+            android:layout_margin="10dp"
+            android:onClick="g2b"/>
+        <Button
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:text="blue to red"
+            android:layout_margin="10dp"
+            android:onClick="b2r"/>
+        <Button
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:text="blue to green"
+        android:layout_margin="10dp"
+        android:onClick="b2g"/>
+
+    </LinearLayout>
+
+</ScrollView>
